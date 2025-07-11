@@ -64,7 +64,7 @@ It is NOT perfect, but it's pretty accurate (~93% with midsized model). Try itï¼
 <dependency>
     <groupId>com.oujingzhou</groupId>
     <artifactId>nsfw-java</artifactId>
-    <version>0.2.0</version>
+    <version>1.0.0</version>
 </dependency>
 ```
 
