@@ -9,6 +9,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.Closeable;
 import java.io.File;
+import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -82,6 +83,9 @@ public class ImageCensor implements Closeable {
 
     private static float[][][][] preprocessImage(String path) throws Exception {
         BufferedImage img = ImageIO.read(new File(path));
+        if (img == null) {
+            throw new IOException("Could not read image file, format may be unsupported: " + path);
+        }
         BufferedImage resized = new BufferedImage(IMAGE_SIZE, IMAGE_SIZE, BufferedImage.TYPE_INT_RGB);
 
         Graphics2D g = resized.createGraphics();
